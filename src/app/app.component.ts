@@ -22,39 +22,8 @@ export class AppComponent {
     }
   ]
 
-
-  onAddProduct(pname : HTMLInputElement, pDescri : HTMLTextAreaElement){
-      let pObj : Iproducts = {
-        productName : pname.value,
-        pDescription : pDescri.value,
-        pCategory : "Product"
-      }
-      this.productArray.push(pObj);
-      pname.value = ''
-      pDescri.value = ''
-  }
-
-  onAddCatlog(pname : HTMLInputElement, pDescri : HTMLTextAreaElement){
-    let obj : Iproducts = {
-      productName : pname.value,
-      pDescription : pDescri.value,
-      pCategory : "Catlog"
-    }
-    this.productArray.push(obj);
-    pname.value = ''
-    pDescri.value = ''
-
-  }
-
-  onAddProductDetails(pname : HTMLInputElement, pDescri : HTMLTextAreaElement, catg : IproductCatg){
-    let obj : Iproducts = {
-        productName : pname.value,
-        pDescription : pDescri.value,
-        pCategory : catg
-    }
-    console.log(obj);
-    this.productArray.push(obj);
-    pname.value = ''
-    pDescri.value = ''
+  onProdcutsAdd(data:Iproducts){
+    console.log(data)
+    this.productArray.push(data)
   }
 }

@@ -1,0 +1,14 @@
+<div class="form-group">
+    <label for="pname">Product Name</label>
+    <input type="text" id="pname" #pname class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="pdesc">Product description</label>
+    <textarea id="pdesc" #pdesc class="form-control" rows="4"></textarea>
+</div>
+
+<div class="text-right">
+    <button class="btn btn-primary mr-3" (click)="addItem(pname, pdesc, 'Product')">Add Product</button>
+    <button class="btn btn-primary" (click)="addItem(pname, pdesc, 'Catlog')">Add Catlog</button>
+</div>

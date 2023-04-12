@@ -1,37 +1,13 @@
+<h1 class="bg-primary text-white p-4">Products IO Task</h1>
+
 <div class="container mt-4">
   <div class="row">
     <div class="col-md-6">
-     <div class="form-group">
-      <label for="pname">Product Name</label>
-      <input type="text" class="form-control" #pname id="pname">
-     </div>
-     <div class="form-group">
-      <label for="pDescri">Product Description</label>
-      <textarea class="form-control" id="pDescri" #pDescri rows="4"></textarea>
-     </div>
-     <div class="text-right">
-      <button class="btn btn-info mr-3" (click)="onAddProductDetails(pname, pDescri, 'Product')">Add Product</button>
-      <button class="btn btn-info" (click)="onAddProductDetails(pname, pDescri, 'Catlog')">Add Catlog</button>
-     </div>
+      <app-product-form (addProducts)="onProdcutsAdd($event)"></app-product-form>
     </div>
     <div class="col-md-6">
-      <div class="card mb-4" *ngFor="let prod of productArray">
-        <div class="card-header text-white " 
-          [ngClass]="{
-            'bg-primary' : prod.pCategory === 'Catlog',
-            'bg-success' : prod.pCategory === 'Product'
-          }"
-        >
-          <h3>
-            {{prod.productName}}
-          </h3>
-        </div>
-        <div class="card-body">
-          <p>
-            {{prod.pDescription}}
-          </p>
-        </div>
-      </div>
+      <app-product-card [getProduct] = 'product'
+       *ngFor="let product of productArray"></app-product-card>
     </div>
   </div>
 </div>
